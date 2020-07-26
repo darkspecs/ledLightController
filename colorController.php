@@ -14,11 +14,15 @@ function convertHexToRGB($hex)
 }
 convertHexToRGB("#ff0000");
 
+if(isset($_POST['color'])){
+    echo("works");
+}
+
 ?>
 <html>
 
 <body>
-    <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+    <input type="color" id="color" name="color" value="#ff0000"><br><br>
     <input type="submit">
 </body>
 
