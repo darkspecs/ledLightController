@@ -7,7 +7,7 @@ from watchdog.events import PatternMatchingEventHandler
 #import RPi.GPIO as GPIO
 
 def convertHexToRGB(hex):
-    if len(hex) != 7:
+    if len(hex) != 7 or hex[0] != "#":
         raise Exception("Not valid hex color")
     h = hex.lstrip('#')
     return tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
@@ -28,7 +28,6 @@ event_handler = MyEventHandler(patterns='dat*.json')
 my_observer = Observer()
 my_observer.schedule(event_handler, ".", recursive=True)
 my_observer.start()
-
 try:
     while True:
         time.sleep(1)
