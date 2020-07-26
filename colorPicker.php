@@ -28,7 +28,6 @@ $data = json_decode($jsondata);
 ?>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=2.0, maximum-scale=2.0">
-
 <body>
     <form action="" method="post">
         <input type="color" id="color" name="color" value="<?php echo($data[1]);?>">
